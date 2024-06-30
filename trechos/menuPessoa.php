@@ -10,8 +10,8 @@
 <hr></hr>
 <nav>
     <ul>
-        <li><a href="indexArvore.php" role="button">Lista de Árvores</a></li>
-        <li><a href="arvore_cad.php" role="button">Cadastro de Árvore</a></li>
+        <li><a href="../arvore/index.php" role="button">Lista de Árvores</a></li>
+        <li><a href="../arvore/arvore_cad.php" role="button">Cadastro de Árvore</a></li>
     </ul>
     <ul>
         <li><a href="pessoa_cad.php" role="button">Cad.Pessoa</a></li>

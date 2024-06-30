@@ -10,8 +10,7 @@
 
 /* definição de constantes */
 define("DESTINO", "index.php");
-define("PESSOA_CSV", "pessoa.csv");
-define("ARVORE_CSV", "arvore.csv");
+define("ARQUIVO", "pessoa.csv");
 
 /* escolha da ação que processará a requisição */
 $acao = "";
@@ -98,7 +97,7 @@ function ler_csv($arquivo)
  */
 function carregar($id)
 {
-    $dados = ler_csv(PESSOA_CSV);
+    $dados = ler_csv(ARQUIVO);
 
     foreach ($dados as $key) {
         if ($key['id'] == $id)
@@ -114,7 +113,7 @@ function alterar()
 {
     $novo = tela2array();
 
-    $dados = ler_csv(PESSOA_CSV);
+    $dados = ler_csv(ARQUIVO);
 
     for ($x = 0; $x < count($dados); $x++) {
         if ($dados[$x]['id'] == $novo['id']) {
@@ -122,7 +121,7 @@ function alterar()
         }
     }
 
-    salvar_csv($dados, PESSOA_CSV);
+    salvar_csv($dados, ARQUIVO);
 
     header("location:" . DESTINO);
 
@@ -144,7 +143,7 @@ function alterar()
 function excluir()
 {
     $id = isset($_GET['id']) ? $_GET['id'] : "";
-    $dados = ler_csv(PESSOA_CSV);
+    $dados = ler_csv(ARQUIVO);
     if ($dados == null)
         $dados = array();
 
@@ -153,7 +152,7 @@ function excluir()
         if ($dados[$x]['id'] != $id)
             array_push($novo, $dados[$x]);
     }
-    salvar_csv($novo, PESSOA_CSV);
+    salvar_csv($novo, ARQUIVO);
 
     header("location:" . DESTINO);
 
@@ -167,7 +166,7 @@ function salvar()
     $dados = NULL;
     $novo = tela2array();
 
-    $dados = ler_csv(PESSOA_CSV);
+    $dados = ler_csv(ARQUIVO);
 
     if ($dados == NULL) {
         $dados = array();
@@ -175,7 +174,7 @@ function salvar()
 
     array_push($dados, $novo);
 
-    salvar_csv($dados, PESSOA_CSV);
+    salvar_csv($dados, ARQUIVO);
 
     header("location:" . DESTINO);
 }

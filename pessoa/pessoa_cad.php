@@ -1,33 +1,32 @@
 <?php 
-/*
-* Código de exemplo da utilização de CSV como persistencia
-* Página reponsável pelo formulário de cadastro da entidade Pessoa
-* @author Wesley R. Bezerra <wesley.bezerra@ifc.edu.br>
-* @version 0.1
-*
-*/
+    /*
+    * Código de exemplo da utilização de CSV como persistencia
+    * Página reponsável pelo formulário de cadastro da entidade Pessoa
+    * @author Wesley R. Bezerra <wesley.bezerra@ifc.edu.br>
+    * @version 0.1
+    *
+    */
+
+    $titulo = "Cadastro de Pessoas";
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
-<?php include 'cabecalho.php'; ?>
+<?php include '../trechos/cabecalho.php'; ?>
 <?php
-include "pessoa_acao.php";
-$id = isset($_GET['id']) ? $_GET['id'] : 0;
-$dados = array();
-if ($id != 0)
-    $dados = carregar($id);
+    include "pessoa_acao.php";
+    $id = isset($_GET['id']) ? $_GET['id'] : 0;
+    $dados = array();
+    if ($id != 0)
+        $dados = carregar($id);
 ?>
 
 <body>
-    <header class="container">
-        <?php include 'menu.php'; ?>
-    </header>
     <main class="container">
-
+        <?php include '../trechos/menuPessoa.php'; ?>
         <form action="pessoa_acao.php" method="post">
             <fieldset>
-                <legend>Cadastro de Pessoas</legend>
-
+                <legend><?php echo $titulo; ?></legend>
+                <br>
                 <label for="id">Id</label>
                 <input type="text" name="id" id="id" value="<?= $id ?>" readonly><br>
 
@@ -57,7 +56,7 @@ if ($id != 0)
                 
                 <label for="estado">Estado</label>
                 <?php
-                    include "estados.php";
+                    include "../trechos/estados.php";
                 ?>
 
                 <label for="salario">Salário</label>

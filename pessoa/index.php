@@ -1,21 +1,24 @@
 <?php 
-/*
-* Código de exemplo da utilização de CSV como persistencia
-* Página reponsável pela listagem da entidade Pessoa
-* @author Wesley R. Bezerra <wesley.bezerra@ifc.edu.br>
-* @version 0.1
-*
-*/
+    /*
+    * Código de exemplo da utilização de CSV como persistencia
+    * Página reponsável pela listagem da entidade Pessoa
+    * @author Wesley R. Bezerra <wesley.bezerra@ifc.edu.br>
+    * @version 0.1
+    *
+    */
 
-require_once "pessoa_acao.php";
+    require_once "pessoa_acao.php";
+
+    $titulo = "Listagem de Pessoas";
 ?>
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="ligth">
-<?php include 'cabecalho.php'; ?>
-
+<html lang="pt-BR">
+<?php
+    include '../trechos/cabecalho.php';
+?>
 <body>
     <main class="container">
-        <?php include 'menu.php'; ?>
+        <?php include '../trechos/menuPessoa.php'; ?>
         <table role="grid">
             <tr>
                 <th>Id</th>
