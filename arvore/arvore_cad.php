@@ -15,7 +15,7 @@
         <?php
             include "../trechos/menuArvore.php";
         ?>
-        <form action="arvore_acao.php" method="post">
+        <form action="arvore_acao.php?id=<?php echo $id; ?>" method="post">
             <fieldset>
                 <legend><?php echo $titulo; ?></legend>
                 <br>
