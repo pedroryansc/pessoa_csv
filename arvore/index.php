@@ -32,8 +32,8 @@
                             <td>{$key['id']}</td>
                             <td>{$key['codigo']}</td>
                             <td>{$key['especie']}</td>
-                            <td>{$key['dataPlantada']}</td>
-                            <td>{$key['dataAdubo']}</td>
+                            <td>".date("d/m/Y", strtotime($key["dataPlantada"]))."</td>
+                            <td>".date("d/m/Y", strtotime($key["dataAdubo"]))."</td>
                             <td align='center'>
                                 <a role='button' href='arvore_cad.php?id={$key['id']}'>A</a>
                             </td>
